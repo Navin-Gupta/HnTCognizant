@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cts.training.micro</groupId>
-	<artifactId>catalog-service</artifactId>
+	<artifactId>discovery-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>catalog-service</name>
+	<name>discovery-server</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>8</java.version>
+		<java.version>1.8</java.version>
 		<spring-cloud.version>2020.0.3-SNAPSHOT</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -22,17 +22,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
-	      <groupId>org.springframework.cloud</groupId>
-	      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-	    </dependency>
-
-		<dependency>
-	      <groupId>org.springframework.cloud</groupId>
-	      <artifactId>spring-cloud-starter-openfeign</artifactId>
-	    </dependency>
-		
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -46,7 +39,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<dependencyManagement>
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -57,6 +50,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -65,7 +59,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
