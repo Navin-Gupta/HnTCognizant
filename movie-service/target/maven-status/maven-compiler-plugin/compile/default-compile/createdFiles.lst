@@ -1,0 +1,4 @@
+com\cts\training\micro\movieservice\entity\Movie.class
+com\cts\training\micro\movieservice\MovieServiceApplication.class
+com\cts\training\micro\movieservice\repository\MovieRepository.class
+com\cts\training\micro\movieservice\controller\MovieController.class

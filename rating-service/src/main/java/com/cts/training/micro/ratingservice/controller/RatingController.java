@@ -26,7 +26,8 @@ public class RatingController {
 	@GetMapping("/ratings/{userId}")
 	public ResponseEntity<RatingDtoData> getRatings(@PathVariable Integer userId){
 		
-		List<Rating> ratings= this.repository.findRatingsByUserId(userId);
+		List<Rating> ratings = this.repository.findAll();
+		// List<Rating> ratings= this.repository.findRatingsByUserId(userId);
 		
 		// convert into dto listing
 		List<RatingDto> ratingDtos = ratings.stream()
