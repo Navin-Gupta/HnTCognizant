@@ -1,5 +1,8 @@
 package com.cts.training.bootappjpa.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,15 +17,23 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	// Config the credential
+	
+	// auto injection of DataSource
+	@Autowired
+	private DataSource dataSource;
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		UserBuilder builder = User.withDefaultPasswordEncoder();
+		// demand specific schema for implementation 
+		auth.jdbcAuthentication().dataSource(dataSource);
+		
+		
+		/*UserBuilder builder = User.withDefaultPasswordEncoder();
 		// create some user
 		auth.inMemoryAuthentication()
 			.withUser(builder.username("admin").password("admin").roles("ADMIN"))
 			.withUser(builder.username("First").password("abc").roles("ADMIN"))
 			.withUser(builder.username("Second").password("abc").roles("VISITOR"))
-			.withUser(builder.username("Third").password("abc").roles("ADMIN","VISITOR"));
+			.withUser(builder.username("Third").password("abc").roles("ADMIN","VISITOR"));*/
 	}
 	
 	
