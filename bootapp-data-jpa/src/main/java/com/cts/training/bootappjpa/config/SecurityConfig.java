@@ -19,21 +19,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	// Config the credential
 	
 	// auto injection of DataSource
-	@Autowired
-	private DataSource dataSource;
+	//@Autowired
+	//private DataSource dataSource;
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// demand specific schema for implementation 
-		auth.jdbcAuthentication().dataSource(dataSource);
+		//auth.jdbcAuthentication().dataSource(dataSource);
 		
 		
-		/*UserBuilder builder = User.withDefaultPasswordEncoder();
+		UserBuilder builder = User.withDefaultPasswordEncoder();
 		// create some user
 		auth.inMemoryAuthentication()
 			.withUser(builder.username("admin").password("admin").roles("ADMIN"))
 			.withUser(builder.username("First").password("abc").roles("ADMIN"))
 			.withUser(builder.username("Second").password("abc").roles("VISITOR"))
-			.withUser(builder.username("Third").password("abc").roles("ADMIN","VISITOR"));*/
+			.withUser(builder.username("Third").password("abc").roles("ADMIN","VISITOR"));
 	}
 	
 	
