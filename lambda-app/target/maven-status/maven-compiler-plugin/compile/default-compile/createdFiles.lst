@@ -1,0 +1,6 @@
+com\cts\training\aws\lambdaapp\endpoints\Upper.class
+com\cts\training\aws\lambdaapp\endpoints\UpperPro.class
+com\cts\training\aws\lambdaapp\model\Product.class
+com\cts\training\aws\lambdaapp\LambdaAppApplication.class
+com\cts\training\aws\lambdaapp\endpoints\Consume.class
+com\cts\training\aws\lambdaapp\handler\AWSLambdaHandler.class
