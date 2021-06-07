@@ -1,0 +1,9 @@
+com\cts\training\micro\catalogservice\CatalogServiceApplication.class
+com\cts\training\micro\catalogservice\feignproxy\RatingServiceProxy.class
+com\cts\training\micro\catalogservice\controller\CatalogController.class
+com\cts\training\micro\catalogservice\dto\RatingDtoData.class
+com\cts\training\micro\catalogservice\dto\Catalog.class
+com\cts\training\micro\catalogservice\dto\Movie.class
+com\cts\training\micro\catalogservice\dto\RatingDto.class
+com\cts\training\micro\catalogservice\dto\CatalogDtoData.class
+com\cts\training\micro\catalogservice\feignproxy\MovieServiceProxy.class

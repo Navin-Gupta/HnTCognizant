@@ -29,11 +29,12 @@ public class MovieController {
 		Optional<Movie> record = this.repository.findById(movieId);
 		Movie movieObj = record.map(movie -> movie).orElse(new Movie());
 		
-		// String port =env.getProperty("server.port");
-		// movieObj.setMovieName(movieObj.getMovieName() + "(" + port + ")");
+		String port =env.getProperty("server.port");
+		movieObj.setMovieName(movieObj.getMovieName() + "(" + port + ")");
 		ResponseEntity<Movie> response = 
 				new ResponseEntity<Movie>(movieObj, HttpStatus.OK);
 		return response;
+		
 	}
 	
 }

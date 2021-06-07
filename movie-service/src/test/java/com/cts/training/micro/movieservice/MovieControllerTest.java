@@ -8,6 +8,8 @@ import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -47,6 +49,29 @@ public class MovieControllerTest {
 		String actualResult = result.getResponse().getContentAsString();
 		String expectedResult = asJsonString(getMockMovieObject().get());
 		assertEquals(expectedResult, actualResult);
+	}
+	
+	@Test
+	public void testGetMovieDetailsBDD() throws Exception {
+		final int count[] = new int[1];
+		when(this.repository.findById(1)).then(new Answer<Optional<Movie>>(){
+
+			@Override
+			public Optional<Movie> answer(InvocationOnMock invocation) throws Throwable {
+				// TODO Auto-generated method stub
+				count[0]++;
+				return getMockMovieObject();
+			}
+			
+		});
+		//when(this.repository.findById(1)).thenAnswer(answer)
+		RequestBuilder builder = 
+				MockMvcRequestBuilders.get("/api/movies/1")
+				.contentType(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_JSON);
+		
+		MvcResult result = mockMvc.perform(builder).andReturn();
+		assertEquals(1, count[0]);
 	}
 	
 	// converting pojo to json string

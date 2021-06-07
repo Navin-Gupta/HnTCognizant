@@ -1,0 +1,8 @@
+com\cts\training\micro\ratingservice\entity\Rating.class
+com\cts\training\micro\ratingservice\dto\RatingDto.class
+com\cts\training\micro\ratingservice\repository\RatingRepositoryCustomImpl.class
+com\cts\training\micro\ratingservice\controller\RatingController.class
+com\cts\training\micro\ratingservice\repository\RatingRepository.class
+com\cts\training\micro\ratingservice\RatingServiceApplication.class
+com\cts\training\micro\ratingservice\repository\RatingRepositoryCustom.class
+com\cts\training\micro\ratingservice\dto\RatingDtoData.class
